@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="margin: 20px; padding: 20px; background-color: white; color: black; text-align: center;">
+    <h1 class="display-4">
+        @LanguageResource.WelcomeKey
+    </h1>
+    <table style="margin-top: 20px;">
+        <tbody>
+            <tr>
+                <td>
+                    <a asp-area="admin" asp-controller="faqs" asp-action="index" class="btn btn-primary">
+                        Admin Panel
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td style="margin-top: 10px;">
+                    <a asp-controller="faq" asp-action="index" class="btn btn-primary">
+                        Display Faqs - Client Side
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

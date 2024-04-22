@@ -1,0 +1,30 @@
+﻿@using TestEnvironment.Models.Entities
+@model IEnumerable<Faq>
+
+@{
+    ViewData["Title"] = "Faqs";
+    var faqs = ViewData["Faqs"] as List<Dictionary<string, string>>;
+}
+
+<div style="margin: 20px; padding: 20px; background-color: white; color: black;">
+    <h4>@LanguageResource.Faq</h4>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@LanguageResource.Question</th>
+                    <th>@LanguageResource.Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Select((value, index) => new { index, value }))
+                {
+                    <tr>
+                        <td>@faqs?[item.index]["Question"]</td>
+                        <td>@faqs?[item.index]["Answer"]</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

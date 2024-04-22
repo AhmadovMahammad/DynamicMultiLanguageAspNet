@@ -1,0 +1,42 @@
+﻿@using TestEnvironment.Models.Entities
+@model IEnumerable<Faq>
+@{
+    ViewData["Title"] = "Faqs";
+}
+
+<div style="margin: 20px; padding: 20px; background-color: white; color: black;">
+    <h4>Faqs</h4>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Question</td>
+                        <td>@item.Answer</td>
+                        <td>
+                            <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-warning">
+                                Edit
+                            </a>
+                            <a asp-action="remove" asp-route-id="@item.Id" class="btn btn-warning">
+                                Remove
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="text-right">
+        <a asp-action="create" class="btn btn-success">
+            Add New
+        </a>
+    </div>
+</div>

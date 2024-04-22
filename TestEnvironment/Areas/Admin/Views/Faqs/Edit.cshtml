@@ -1,0 +1,35 @@
+﻿@using MultiLanguageProvider.Business.FaqModule
+@model FaqEditCommand
+@{
+    ViewData["Title"] = "Edit";
+}
+<div style="margin: 20px; padding: 20px; background-color: white; color: black;">
+    <h4>Edit</h4>
+    <form method="post">
+        <div style="margin-bottom: 10px;">
+            <label>Question:</label>
+            <input style="margin-left: 10px;" type="text" asp-for="Question">
+            <span asp-validation-for="Question" class="text-danger"></span>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label>Question in English:</label>
+            <input style="margin-left: 10px;" type="text" asp-for="QuestionEng">
+            <span asp-validation-for="QuestionEng" class="text-danger"></span>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label>Answer:</label>
+            <textarea style="margin-left: 10px;" asp-for="Answer"></textarea>
+            <span asp-validation-for="Answer" class="text-danger"></span>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label>Answer in English:</label>
+            <textarea style="margin-left: 10px;" asp-for="AnswerEng"></textarea>
+            <span asp-validation-for="AnswerEng" class="text-danger"></span>
+        </div>
+        <div style="margin-top: 20px;">
+            <input type="hidden" asp-for="Id" />
+            <button style="margin-right: 10px;" class="btn btn-success">Save</button>
+            <a class="btn btn-info" asp-action="index">Go Back</a>
+        </div>
+    </form>
+</div>
