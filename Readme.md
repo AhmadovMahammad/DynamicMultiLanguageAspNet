@@ -2,6 +2,7 @@
 
 ## Introduction
 This repository contains an implementation for handling dynamic multi-language data in ASP.NET. While multi-language support for static data is common using resources files, this project extends that capability to dynamic data.
+### For detailed information about extension, follow this path -> TestEnvironment/AppCode/Extensions/MultiLanguageExtension.cs
 
 ## Model Definition
 To utilize this functionality, your model should inherit from `IMultiLanguage` interface and use the `LocalizedPropertyAttribute`.
